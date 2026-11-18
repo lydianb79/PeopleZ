@@ -8,6 +8,18 @@ Built with Unity 6 (URP) on Metal. Everything in the game is generated in code a
 
 ![PeopleZ by day](docs/screenshot-day.jpg)
 
+## Download
+
+Get `PeopleZ-macOS.zip` from the [latest release](https://github.com/lydianb79/PeopleZ/releases/latest), unzip it and open `PeopleZ.app`.
+
+- Requires an Apple Silicon Mac running macOS 12 or later.
+- The game always starts fullscreen at the display's native resolution. Press **F** to switch to a window and back.
+- The app is not notarised by Apple, so macOS will refuse to open it the first time. Either open **System Settings → Privacy & Security** and choose **Open Anyway**, or remove the quarantine flag:
+
+```bash
+xattr -dr com.apple.quarantine PeopleZ.app
+```
+
 ## How to play
 
 Your followers (blue) wander until they find flat ground, then settle. The flatter the land around a home, the bigger it grows, from a camp up to a castle, and the more people and mana it produces. Full homes send out new followers to settle further.
@@ -30,7 +42,7 @@ You do not control followers directly. You raise and lower the land to give them
 | Space | Pause |
 | Tab | Toggle 3× speed |
 | M | Music on / off |
-| F | Fullscreen / window |
+| F | Fullscreen / window (the game always starts fullscreen) |
 
 ### Powers
 
@@ -63,6 +75,10 @@ Followers who win a siege capture the building rather than destroying it.
 |---|---|
 | ![Close-up of a castle](docs/screenshot-close.jpg) | ![Volcano at dusk](docs/screenshot-dusk.jpg) |
 | ![A village at night](docs/screenshot-night.jpg) | ![The island by day](docs/screenshot-day.jpg) |
+
+The start of a game, captured fullscreen at native resolution:
+
+![Fullscreen at native resolution](docs/screenshot-fullscreen.jpg)
 
 ## Building from source
 

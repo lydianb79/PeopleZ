@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
     public float tod;                      // time of day 0..1 (0 = sunrise, 0.7 = sunset)
     const float DayLength = 540f;
     float nightExposure, nightLevel, battle, forceBattle; string wavPath;
-    bool testRun; string iconPath; RenderTexture iconRT; int iconFrames; const int IconC = 64;
+    bool testRun, userToggledScreen, loggedScreen; string iconPath; RenderTexture iconRT; int iconFrames; const int IconC = 64;
 
     void SetupIcon()
     {
@@ -234,7 +234,7 @@ public class Game : MonoBehaviour
             Vector3 p = rig.focus;
             sim.Cast(0, 3, p + new Vector3(7, 0, -3)); sim.Cast(0, 2, p + new Vector3(-5, 0, 4)); sim.Cast(0, 5, p + new Vector3(4, 0, 9)); sim.Cast(0, 1, p + new Vector3(-3, 0, -3));
         }
-        if (shotPath != null) { shotT = 2.5f; Application.runInBackground = true; }
+        if (shotPath != null) { shotT = testRun ? 2.5f : 6f; Application.runInBackground = true; }
         if (iconPath != null) SetupIcon();
         wavPath = Arg("-pzwav");
         if (wavPath != null)
@@ -288,8 +288,17 @@ public class Game : MonoBehaviour
         if (iconPath != null) IconFrame();
         if (!testRun)
         {
+            // Always come up fullscreen, whatever window state was saved from an earlier session.
+            if (!userToggledScreen && Time.unscaledTime < 4f && !Screen.fullScreen && Time.frameCount % 20 == 5)
+                Screen.SetResolution(Display.main.systemWidth, Display.main.systemHeight, FullScreenMode.FullScreenWindow);
+            if (!loggedScreen && Time.unscaledTime > 4f)
+            {
+                loggedScreen = true;
+                Debug.Log("[PZ] screen " + Screen.width + "x" + Screen.height + " fullscreen=" + Screen.fullScreen + " mode=" + Screen.fullScreenMode);
+            }
             if (Input.GetKeyDown(KeyCode.F))
             {
+                userToggledScreen = true;
                 if (Screen.fullScreen) Screen.SetResolution(1600, 1000, FullScreenMode.Windowed);
                 else Screen.SetResolution(Display.main.systemWidth, Display.main.systemHeight, FullScreenMode.FullScreenWindow);
             }

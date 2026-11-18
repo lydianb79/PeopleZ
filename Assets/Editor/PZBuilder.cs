@@ -87,8 +87,8 @@ public static class PZBuilder
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
 
         PlayerSettings.productName = "PeopleZ";
-        PlayerSettings.bundleVersion = "1.0.0";
-        PlayerSettings.macOS.buildNumber = "1";
+        PlayerSettings.bundleVersion = "1.0.1";
+        PlayerSettings.macOS.buildNumber = "2";
         PlayerSettings.companyName = "PeopleZ";
         PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Standalone, "com.peoplez.game");
         PlayerSettings.colorSpace = ColorSpace.Linear;
