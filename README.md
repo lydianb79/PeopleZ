@@ -120,3 +120,9 @@ The built app accepts a few command-line flags used for automated checks:
 | `-pzshot file.png` | Save a screenshot after a few seconds, then quit |
 | `-pzwav file.raw` | Record 45 seconds of the music as raw 16-bit stereo, then quit |
 | `-pzicon file.png` | Render the app icon, then quit |
+
+## Licence
+
+Copyright (C) 2026 lydianb79
+
+PeopleZ is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3. It is distributed in the hope that it will be useful, but without any warranty. See [LICENSE](LICENSE) for the full text.
