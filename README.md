@@ -8,17 +8,6 @@ Built with Unity 6 (URP) on Metal. Everything in the game is generated in code a
 
 ![PeopleZ by day](docs/screenshot-day.jpg)
 
-## Download
-
-Get `PeopleZ-macOS.zip` from the [latest release](https://github.com/lydianb79/PeopleZ/releases/latest), unzip it and open `PeopleZ.app`.
-
-- Requires an Apple Silicon Mac running macOS 12 or later.
-- The app is not notarised by Apple, so macOS will refuse to open it the first time. Either open **System Settings → Privacy & Security** and choose **Open Anyway**, or remove the quarantine flag:
-
-```bash
-xattr -dr com.apple.quarantine PeopleZ.app
-```
-
 ## How to play
 
 Your followers (blue) wander until they find flat ground, then settle. The flatter the land around a home, the bigger it grows, from a camp up to a castle, and the more people and mana it produces. Full homes send out new followers to settle further.
