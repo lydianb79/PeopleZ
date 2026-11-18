@@ -1,0 +1,27 @@
+# Unity
+/Library/
+/Temp/
+/Obj/
+/Logs/
+/UserSettings/
+/Build/
+/Builds/
+/MemoryCaptures/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.booproj
+*.unityproj
+/.vscode/
+/.idea/
+/.vs/
+
+# macOS
+.DS_Store
+
+# Local scratch outputs (regenerate with the test flags in the README)
+/music-preview-*.wav
+/screenshot-*.png
+/app-icon.png
